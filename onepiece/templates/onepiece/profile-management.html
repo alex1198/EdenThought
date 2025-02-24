@@ -1,0 +1,57 @@
+{% extends 'onepiece/navbar.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<head>
+    <title> Edenthought | Profile Management </title>
+</head>
+
+
+<br>
+
+<div class="container bg-white shadow-md p-5 form-layout">
+
+<h1> Update Username and Email </h1>
+<p> You may change your username and email down below: </p>
+ <br>
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+
+    {{UserUpdateForm|crispy}}
+    <br>
+    <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit"> &nbsp; Update </button>
+    <br>
+    
+</form>
+
+
+</div>
+<br>
+
+<div class="container bg-white shadow-md p-5 form-layout">
+
+    <h1> Update Profile Picture  </h1>
+    <p> You may change your profile picture below: </p>
+    <br> <br>
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        {{ProfileUpdateForm|crispy}}
+        <br>
+        <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit"> &nbsp; Upload Profile Picture </button>
+        <br>
+        
+    </form>
+    
+    
+    </div>
+<br>
+<div class="container bg-white shadow-md p-5 form-layout">
+    <h3> Delete your account </h3>
+    <br> <br> 
+    <a   href="{% url 'delete-account' %}"> <b> Proceed to delete your account </b> </a>
+</div>
+<br>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'onepiece/navbar.html' %}
+
+{% block content %}
+
+<head>
+    <title> Edenthought | Dashboard </title>
+</head>
+
+
+<br>
+
+<div class="container bg-white shadow-md p-5 form-layout">
+
+<h2> {{user}} </h2>
+
+<br> 
+
+<p> Welcome, {{user}}! This is your dashboard. </p>
+
+<img style="width:120px; height:120px;" src="{{ProfilePic.profile_pic.url}}">
+
+<br> <br>
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'onepiece/navbar.html' %}
+
+
+
+{% block content %}
+
+<head>
+    <title> Edenthought | Delete Account </title>
+</head>
+
+
+<br>
+
+<div class="container bg-white shadow-md p-5 form-layout">
+
+<h1> Delete your account</h1>
+<p>Are you sure you want to delete your account? This action cannot be undone.</p>
+<br> 
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+
+    <button class="btn btn-outline-danger btn-md w-100 btn-block p-3" type="submit"> &nbsp; Yes, Delete My Account </button>
+    <br>
+    
+</form>
+<br>
+
+<a   href="{% url 'profile-management' %}"> <b> Return to profile management. </b> </a>
+
+
+</div>
+
+
+<br>
+{% endblock %}

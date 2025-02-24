@@ -1,0 +1,32 @@
+{% extends 'onepiece/navbar.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<head>
+    <title> Edenthought | Update Thought </title>
+</head>
+
+
+<br>
+
+<div class="container bg-white shadow-md p-5 form-layout">
+
+<h1> Update a thought </h1>
+<p> Modify the details of your chosen thought below: </p>
+
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+
+    {{UpdateThought|crispy}}
+    
+    <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit"> &nbsp; Update Thought </button>
+</form>
+<br>
+<a href="{% url 'my-thoughts' %}">Return to Thoughts</a>
+
+
+</div>
+<br>
+{% endblock %}
